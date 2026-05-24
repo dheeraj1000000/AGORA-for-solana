@@ -115,27 +115,6 @@ The CBOM bytes in each `reports/<protocol>/cbom.json` are the literal bytes whos
 
 ---
 
-## Team
-
-| | | |
-|---|---|---|
-| ![Royce Carbowitz](assets/founders/royce.png) | ![JP McCorley](assets/founders/jp.jpg) | ![Dheeraj Kumar](assets/founders/dheeraj.png) |
-| **Royce Carbowitz** Co-founder | **JP McCorley** Co-founder | **Dheeraj Kumar** Co-founder |
-
----
-
-## Hackathon submission scope
-
-This repo is the deliverable for the Solana Hackathon judging round. Specifically:
-
-- **Track**: PQ readiness / DeFi security tooling.
-- **What's new**: First Solana-aware CycloneDX 1.6 CBOM emitter, first on-chain CBOM attestation system on Solana.
-- **Live demo**: All eight attestations above were confirmed within ~2 seconds of submission on devnet. Solscan links are clickable proof.
-- **What's reusable**: The CBOMs in this repo are immediately consumable by any FS-ISAC member, FI compliance team, or protocol team wanting a snapshot of their current cryptographic posture.
-- **What's next**: Mainnet deploy, dashboard UI, Jupiter + Raydium coverage, L3 KMS-join companion CBOM.
-
----
-
 ## License
 
 See [LICENSE](LICENSE). The audit findings are released for public verification and reproduction; they are not warranties of correctness or security.
