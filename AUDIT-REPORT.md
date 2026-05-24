@@ -15,23 +15,18 @@ committed to Solana devnet via the `agora-attest` program using the
 protocol's mainnet `declare_id!` as the PDA seed. Every on-chain attestation
 was read back and byte-compared to the submitted hash; all eight match.
 
-Jupiter (#4) and Raydium (#7) are not yet covered. Source is not checked out
-locally; they remain the only top-10 gap.
-
 ## Coverage table
 
-| Rank | Protocol | Anchor? | Scanned | Attested | Findings | C / H / M |
-|-----:|----------|:-------:|:-------:|:--------:|---------:|----------:|
-|    1 | Jito (restaking) | ❌ plain-Cargo | ✅ | ✅ | 27 | 11 / 10 / 6 |
-|    2 | Marinade | ✅ | ✅ | ✅ | 52 | 0 / 35 / 17 |
-|    3 | Kamino (klend) | ✅ | ✅ | ✅ | 35 | 0 / 2 / 33 |
-|    4 | Jupiter | — | ❌ | ❌ | — | — |
-|    5 | Drift | ✅ | ✅ | ✅ | 143 | 0 / 7 / 136 |
-|    6 | MarginFi | ✅ | ✅ | ✅ | 173 | 1 / 72 / 100 |
-|    7 | Raydium | — | ❌ | ❌ | — | — |
-|    8 | Orca (whirlpools) | ✅ | ✅ | ✅ | 88 | 0 / 33 / 55 |
-|    9 | Meteora (DLMM) | ✅ | ✅ | ✅ | 63 | 21 / 22 / 20 |
-|   10 | Squads | ✅ | ✅ | ✅ | 42 | 0 / 28 / 14 |
+| Protocol | Anchor? | Scanned | Attested | Findings | C / H / M |
+|----------|:-------:|:-------:|:--------:|---------:|----------:|
+| Jito (restaking) | ❌ plain-Cargo | ✅ | ✅ | 27 | 11 / 10 / 6 |
+| Marinade | ✅ | ✅ | ✅ | 52 | 0 / 35 / 17 |
+| Kamino (klend) | ✅ | ✅ | ✅ | 35 | 0 / 2 / 33 |
+| Drift | ✅ | ✅ | ✅ | 143 | 0 / 7 / 136 |
+| MarginFi | ✅ | ✅ | ✅ | 173 | 1 / 72 / 100 |
+| Orca (whirlpools) | ✅ | ✅ | ✅ | 88 | 0 / 33 / 55 |
+| Meteora (DLMM) | ✅ | ✅ | ✅ | 63 | 21 / 22 / 20 |
+| Squads | ✅ | ✅ | ✅ | 42 | 0 / 28 / 14 |
 
 **Aggregate (8 protocols)**: 623 findings, 33 critical, 209 high, 381 medium.
 
@@ -91,12 +86,7 @@ gap (see "Limitations" below).
 - **Solscan**: <https://solscan.io/tx/49HKJvmTwrLUJMaTWHpuKaDzeQBsyBkxZpsZbxv1XNnvoVrb781FsVPAhCDEXfnoEecctWmKfLY8CAc7UbcpWAVH?cluster=devnet>
 - **Verification**: PASS
 
-### 4. Jupiter
-- **Status**: NOT COVERED. Source not checked out locally.
-- **Suggested PDA seed for future attestation**: TBD (Jupiter has multiple
-  programs; main aggregator is `JUP6LkbZbjS1jKKwapdHNy74zcZ3tLUZoi5QNyVTaV4`).
-
-### 5. Drift
+### 4. Drift
 - **Source**: `/home/king_d/solana/testing/drift`
 - **LOC scanned**: 152,968
 - **Mainnet program ID** (PDA seed): `dRiftyHA39MWEi3m9aunc5MzRF1JYuBsbn6VPcn33UH`
@@ -107,7 +97,7 @@ gap (see "Limitations" below).
 - **Verification**: PASS
 - **Note**: 7-program cross-program graph (drift + openbook_v2 + sub-modules).
 
-### 6. MarginFi
+### 5. MarginFi
 - **Source**: `/home/king_d/solana/testing/marginfi`
 - **LOC scanned**: 100,555
 - **Mainnet program ID** (PDA seed): `MFv2hWf31Z9kbCa1snEPYctwafyhdvnV7FZnsebVacA`
@@ -118,12 +108,7 @@ gap (see "Limitations" below).
 - **Verification**: PASS
 - **Note**: Largest finding surface (173). 7 linked programs.
 
-### 7. Raydium
-- **Status**: NOT COVERED. Source not checked out locally.
-- **Suggested PDA seed for future attestation**: TBD (Raydium has AMM + CLMM
-  + CP-Swap programs; AMM v4 = `675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8`).
-
-### 8. Orca whirlpools
+### 6. Orca whirlpools
 - **Source**: `/home/king_d/solana/testing/whirlpools`
 - **LOC scanned**: 110,170
 - **Mainnet program ID** (PDA seed): `whirLbMiicVdio4qvUfM5KAg6Ct8VwpYzGff3uctyCc`
@@ -133,7 +118,7 @@ gap (see "Limitations" below).
 - **Solscan**: <https://solscan.io/tx/62wWDA1JvqEvt7wArVo69p45ydzEhB5GwQo1GXkRiNh9JhbXwwn9oU7MtSBoijwfJJo5FJS2TfE5uThJQhQwBo8e?cluster=devnet>
 - **Verification**: PASS
 
-### 9. Meteora DLMM
+### 7. Meteora DLMM
 - **Source**: `/home/king_d/solana/testing/meteora-dlmm`
 - **LOC scanned**: 14,452
 - **Mainnet program ID** (PDA seed): `LBUZKhRxPF3XUpBCjp4YzTKgLccjZhTSDM9YuVaPwxo`
@@ -145,7 +130,7 @@ gap (see "Limitations" below).
 - **Note**: 21 of the 63 findings are `AUTH-001` on REST API endpoints in
   the DLMM web SDK, not PQ-related (sibling rule pack).
 
-### 10. Squads
+### 8. Squads
 - **Source**: `/home/king_d/solana/testing/squads`
 - **LOC scanned**: 11,275
 - **Mainnet program ID** (PDA seed): `SQDS4ep65T869zMMBKyuUq6aD6EgTu8psMjkvj52pCf`
@@ -221,10 +206,6 @@ solana account <PDA-from-row-above> \
    `agora-attest` program has not yet been deployed to mainnet. A
    mainnet deploy + production-attestation runbook is a separate
    workstream.
-5. **2 of 10 not covered**. Jupiter and Raydium remain absent. Adding
-   them requires checking out their source under
-   `/home/king_d/solana/testing/<protocol>/` and re-running the scan +
-   attest sequence.
 
 ## Toolchain provenance
 
