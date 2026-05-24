@@ -91,29 +91,6 @@ All eight pass byte-equal verification on read-back. See [ATTESTATIONS.md](ATTES
 
 ---
 
-## How to verify any attestation yourself
-
-You don't need to trust us. Every attestation is checkable in three commands:
-
-```bash
-# 1. Pull the on-chain attestation account
-solana account <PDA-from-ATTESTATIONS.md> \
-  --url https://api.devnet.solana.com --output json
-
-# 2. Decode bytes 40..72 of account.data[0] (base64-decoded)
-#    That's the audit_pack_hash field (SHA-256, 32 bytes).
-
-# 3. Hash the CBOM in this repo and compare
-cat reports/<protocol>/cbom.json | sha256sum
-#    (Note: re-hashing here will not match because production runs bake
-#     chrono::Utc::now() into metadata.timestamp. The hash recorded
-#     on-chain was captured at scan time; the CBOM file in this repo is
-#     the exact byte sequence whose SHA-256 was committed.)
-```
-
-The CBOM bytes in each `reports/<protocol>/cbom.json` are the literal bytes whose SHA-256 was written to the corresponding on-chain attestation PDA. There is no privileged reproduction step.
-
----
 
 ## License
 
