@@ -1,0 +1,1 @@
+{"bomFormat":"CycloneDX","components":[],"metadata":{"properties":[{"name":"pinpoint:canonical-schema-version","value":"2"}],"timestamp":"2026-05-24T04:39:34.800044798+00:00","tools":{"components":[{"name":"SPECTRE","publisher":"Pinpoint","type":"application","version":"1.2.2"}]}},"specVersion":"1.6","version":1}
